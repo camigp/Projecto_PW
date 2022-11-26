@@ -22,13 +22,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
 
-    path('perfiles/', views.perfiles, name='perfiles'),
-
-
-
+    path('perfiles/', views.perfiles , name='perfiles'),
     path('perfiles/create/', views.create_perfil , name='create_perfil'),
-
-
+    path('perfiles/<int:perfiles_id>/', views.perfil_detail , name='perfil_detail'),
+    path('perfiles/<int:perfiles_id>/delete/', views.delete_perfil, name='delete_perfil'),
 
     path('temas/', views.temas, name='temas'),
 
@@ -45,8 +42,6 @@ urlpatterns = [
     path('signup/', views.signup, name='signup'),
     path('signin/', views.signin, name='signin'),
     path('logout/', views.signout, name='logout'),
-    path('task/', views.task, name='task'),
-    path('task/create/', views.create_task, name='create_task'),
-    path('task/<int:task_id>/', views.task_detail, name='task_detail'),
-    path('task/<int:task_id>/delete/', views.delete_task, name='delete_task'),
+
 ]
+

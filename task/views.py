@@ -6,7 +6,7 @@ from django.db import IntegrityError
 from django.shortcuts import render, redirect, get_object_or_404
 
 from .forms import TaskForm, PerfilForm
-from .models import TaskModel, PerfilModel
+from .models import PerfilTesisModel
 
 
 # Home
@@ -14,8 +14,7 @@ def home(request):
     return render(request, 'home.html')
 
 
-def perfiles(request):
-    return render(request, 'perfiles_tesis.html')
+
 
 
 def temas(request):
@@ -30,87 +29,10 @@ def sennalamiento(request):
     return render(request, 'sennalamiento.html')
 
 
-# Visualizar de tarea
-@login_required
-def task_detail(request, task_id):
-    if request.method == 'GET':
-        task = get_object_or_404(TaskModel, pk=task_id)
-        form = TaskForm(instance=task)
-        return render(request, 'task_detail.html', {
-            'task': task,
-            'form': form
-        })
-    else:
-        try:
-            task = get_object_or_404(TaskModel, pk=task_id)
-            form = TaskForm(request.POST, instance=task)
-            form.save()
-            return redirect('task')
-        except ValueError:
-            return render(request, 'task_detail.html', {
-                'task': task,
-                'form': form,
-                'error': "Error al actualizar"
-            })
 
 
-#  Eliminar tarea
-@login_required
-def delete_task(request, task_id):
-    task = get_object_or_404(TaskModel, pk=task_id)
-    if request.method == 'POST':
-        task.delete()
-        return redirect('task')
 
 
-# Listar tareas
-@login_required
-def task(request):
-    tasks = TaskModel.objects.all()
-    return render(request, 'task.html', {
-        'tasks': tasks
-    })
-
-
-# creadno una tarea
-@login_required
-def create_task(request):
-    if request.method == 'GET':
-        return render(request, 'create_task.html', {
-            'form': TaskForm
-        })
-    else:
-
-        try:
-            form = TaskForm(request.POST)
-            new_task = form.save(commit=False)
-            new_task.user = request.user
-            new_task.save()
-            return redirect('task')
-        except:
-            return render(request, 'create_task.html', {
-                'form': TaskForm,
-                'error': 'Please provider valide data'
-            })
-
-
-def create_perfil(request):
-    if request.method == 'GET':
-        return render(request, 'create_perfil.html', {
-            'form': PerfilForm
-        })
-    else:
-        try:
-            form = PerfilForm(request.POST)
-            new_perfil = form.save(commit=False)
-            new_perfil.user = request.user
-            new_perfil.save()
-            return redirect('perfiles')
-        except:
-            return render(request, 'create_perfil.html', {
-                'form': PerfilForm,
-                'error': 'Please provider valide data'
-            })
 
 
 # Creando Usuario
@@ -159,7 +81,7 @@ def signin(request):
             })
         else:
             login(request, user),
-            return redirect('task')
+            return redirect('home')
 
 
 # Cerrando sesion
@@ -167,3 +89,75 @@ def signin(request):
 def signout(request):
     logout(request)
     return redirect('home')
+
+
+
+# Listar tareas
+@login_required
+def task(request):
+    tasks = TaskModel.objects.all()
+    return render(request, 'task.html', {
+        'tasks': tasks
+    })
+
+
+# listar perfiles
+@login_required
+def perfiles(request):
+    perfiles = PerfilTesisModel.objects.all()
+    return render(request, 'perfiles_tesis.html',{
+        'perfiles': perfiles
+    })
+
+@login_required
+def create_perfil(request):
+    if request.method == 'GET':
+        return render(request, 'create_perfil.html', {
+            'form': PerfilForm
+        })
+    else:
+        try:
+            form = PerfilForm(request.POST)
+            new_perfil = form.save(commit=False)
+            new_perfil.user = request.user
+            new_perfil.save()
+            return redirect('perfiles')
+        except:
+            return render(request, 'create_perfil.html', {
+                'form': PerfilForm,
+                'error': 'Please provider valide data'
+            })
+
+
+# Visualizar de tarea
+@login_required
+def perfil_detail(request, perfil_id):
+    if request.method == 'GET':
+        perfil = get_object_or_404(PerfilTesisModel, pk=perfil_id)
+        form = TaskForm(instance=perfil)
+        return render(request, 'task_detail.html', {
+            'perfil': perfil,
+            'form': form
+        })
+    else:
+        try:
+            perfil = get_object_or_404(PerfilTesisModel, pk=perfil_id)
+            form = TaskForm(request.POST, instance=perfil)
+            form.save()
+            return redirect('perfiles')
+        except ValueError:
+            return render(request, 'task_detail.html', {
+                'perfil': perfil,
+                'form': form,
+                'error': "Error al actualizar"
+            })
+
+
+#  Eliminar tarea
+@login_required
+def delete_perfil(request, perfil_id):
+    perfil = get_object_or_404(PerfilTesisModel, pk=perfil_id)
+    if request.method == 'POST':
+        perfil.delete()
+        return redirect('perfiles')
+

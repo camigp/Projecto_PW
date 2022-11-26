@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>{{ perfil.tema}}</h1>
+
+
+        <form method='POST'>
+
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button>
+                Update
+            </button>
+        </form>
+
+        <form action="{% url 'delelte_perfil' perfil.id %}" method='POST'>
+
+            {% csrf_token %}
+            <button>
+                Delete
+            </button>
+        </form>
+
+{% endblock %}

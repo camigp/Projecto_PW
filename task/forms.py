@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 
-from .models import TaskModel, PerfilModel
+from .models import TaskModel, PerfilTesisModel
 
 
 class TaskForm(ModelForm):
@@ -11,7 +11,7 @@ class TaskForm(ModelForm):
 
 class PerfilForm(ModelForm):
     class Meta:
-        model = PerfilModel
-        fields = ("tema", "objeto_estudio", "campo_accion", "contexto_problema", "aprobado")
+        model = PerfilTesisModel
+        fields = ("tema","objeto_estudio", "campo_accion", "contexto_problema", "aprobado")
 
 

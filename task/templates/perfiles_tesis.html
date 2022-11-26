@@ -1,5 +1,17 @@
-{% extends 'base_new.html' %}
+{% extends 'base.html' %}
+
 {% block content %}
-<h2>Perfiles</h2>
+<h1>Perfiles</h1>
+   {% csrf_token %}
+<ul>
+    {% for perfil in perfiles %}
+    <li>
+        <a href="{% url 'perfil_detail' perfil.id %}">
+            {{perfil.objeto_estudio}}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+
 {% endblock %}
 
