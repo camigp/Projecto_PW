@@ -11,26 +11,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="890fd947-6d9c-453f-aeb7-e7a9f306b157" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task/migrations/0006_tematesismodel_remove_perfilmodel_tema.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task/templates/perfil_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/task/static/css/styles/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/djangocrud/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangocrud/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/djangocrud/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangocrud/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/task/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/task/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/task/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/task/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/task/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task/templates/create_perfil.html" beforeDir="false" afterPath="$PROJECT_DIR$/task/templates/create_perfil.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/task/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task/templates/perfiles_tesis.html" beforeDir="false" afterPath="$PROJECT_DIR$/task/templates/perfiles_tesis.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task/templates/sennalamiento.html" beforeDir="false" afterPath="$PROJECT_DIR$/task/templates/sennalamiento.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task/templates/temas_tesis.html" beforeDir="false" afterPath="$PROJECT_DIR$/task/templates/temas_tesis.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/task/templates/tribunales_tesis.html" beforeDir="false" afterPath="$PROJECT_DIR$/task/templates/tribunales_tesis.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/task/static/css/styles/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/task/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task/templates/base_sign.html" beforeDir="false" afterPath="$PROJECT_DIR$/task/templates/base_sign.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/task/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/task/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,12 +51,19 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\DEV\projects\Web\Projecto_PW\task\static\css\styles" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -66,6 +78,9 @@
       <workItem from="1669431213248" duration="222000" />
       <workItem from="1669431450421" duration="2727000" />
       <workItem from="1669434211144" duration="968000" />
+      <workItem from="1669472834607" duration="1725000" />
+      <workItem from="1669477215094" duration="2567000" />
+      <workItem from="1669499682888" duration="2000" />
     </task>
     <servers />
   </component>
@@ -92,9 +107,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1669433067003" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1669433184935">
+    <state x="461" y="165" key="SettingsEditor" timestamp="1669473028194">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1669433184935" />
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1669473028194" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1669472850574">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1669472850574" />
   </component>
 </project>

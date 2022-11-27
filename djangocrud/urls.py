@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
 
+
     path('perfiles/', views.perfiles , name='perfiles'),
     path('perfiles/create/', views.create_perfil , name='create_perfil'),
     path('perfiles/<int:perfiles_id>/', views.perfil_detail , name='perfil_detail'),
@@ -40,7 +41,8 @@ urlpatterns = [
 
 
     path('signup/', views.signup, name='signup'),
-    path('signin/', views.signin, name='signin'),
+    path('login/', views.login, name='login'),
+    path('login/signup/', views.signup, name='signup'),
     path('logout/', views.signout, name='logout'),
 
 ]

@@ -1,12 +1,7 @@
 from django.forms import ModelForm
 
-from .models import TaskModel, PerfilTesisModel
+from .models import PerfilTesisModel
 
-
-class TaskForm(ModelForm):
-    class Meta:
-        model = TaskModel
-        fields = ("title", "description", "important")
 
 
 class PerfilForm(ModelForm):

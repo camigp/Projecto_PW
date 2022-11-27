@@ -82,16 +82,16 @@ TEMPLATES = [
 WSGI_APPLICATION = 'djangocrud.wsgi.application'
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env('POSTGRESQL_NAME'),
-        'USER': env('POSTGRESQL_USER'),
-        'PASSWORD': env('POSTGRESQL_PASS'),
-        'HOST': env('POSTGRESQL_HOST'),
-        'PORT': env('POSTGRESQL_PORT'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': env('POSTGRESQL_NAME'),
+#         'USER': env('POSTGRESQL_USER'),
+#         'PASSWORD': env('POSTGRESQL_PASS'),
+#         'HOST': env('POSTGRESQL_HOST'),
+#         'PORT': env('POSTGRESQL_PORT'),
+#     }
+# }
 
 
 # Password validation

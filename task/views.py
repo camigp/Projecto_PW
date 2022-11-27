@@ -5,8 +5,13 @@ from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.shortcuts import render, redirect, get_object_or_404
 
-from .forms import TaskForm, PerfilForm
+from .forms import PerfilForm
 from .models import PerfilTesisModel
+
+
+def login(request):
+    return render(request, 'login.html')
+
 
 
 # Home
@@ -65,7 +70,7 @@ def signup(request):
 # Iniciando sesion
 def signin(request):
     if request.method == 'GET':
-        return render(request, 'signin.html', {
+        return render(request, 'login.html', {
             'form': AuthenticationForm
         })
     else:
@@ -75,9 +80,8 @@ def signin(request):
             password=request.POST['password']
         )
         if user is None:
-            return render(request, 'signin.html', {
-                'form': AuthenticationForm,
-                'error': 'User or pass is incorrect'
+            return render(request, 'login.html', {
+            'error': 'User or pass is incorrect'
             })
         else:
             login(request, user),
@@ -91,14 +95,6 @@ def signout(request):
     return redirect('home')
 
 
-
-# Listar tareas
-@login_required
-def task(request):
-    tasks = TaskModel.objects.all()
-    return render(request, 'task.html', {
-        'tasks': tasks
-    })
 
 
 # listar perfiles
@@ -134,7 +130,7 @@ def create_perfil(request):
 def perfil_detail(request, perfil_id):
     if request.method == 'GET':
         perfil = get_object_or_404(PerfilTesisModel, pk=perfil_id)
-        form = TaskForm(instance=perfil)
+        form = PerfilForm(instance=perfil)
         return render(request, 'task_detail.html', {
             'perfil': perfil,
             'form': form
@@ -142,7 +138,7 @@ def perfil_detail(request, perfil_id):
     else:
         try:
             perfil = get_object_or_404(PerfilTesisModel, pk=perfil_id)
-            form = TaskForm(request.POST, instance=perfil)
+            form = PerfilForm(request.POST, instance=perfil)
             form.save()
             return redirect('perfiles')
         except ValueError:
